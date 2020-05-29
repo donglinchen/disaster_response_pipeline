@@ -1,13 +1,14 @@
-### Welcome to Disaster Response Application
-##### A machine learning pipeline to classify messages to be sent to appropriate disaster relief agency
+## Welcome to Disaster Response Application
 
-#### Prerequisites
+#### A machine learning pipeline to classify messages to be sent to appropriate disaster relief agency
+
+### Prerequisites
 
 - Python
 - Scikit Learn - machine learning library
 - Plotly - front-end graph library ML models
 
-#### ETL Pipeline
+### ETL Pipeline
 
 "ETL Pipeline Preparation.ipynb" python notebook file contains the data analysis to prepare for build ETL pipeline.
 
@@ -19,7 +20,7 @@ python process_data.py disaster_messages.csv disaster_categories.csv DisasterRes
 ```
 
 
-#### ML pipeline
+### ML pipeline
 
 "ML Pipeline Preparation.ipynb" python notebook file contains the data analysis and code to prepare for build ML pipeline.
 
@@ -31,10 +32,10 @@ python train_classifier.py ../data/DisasterResponse.db classifier.pkl
 ```
 This will also output the model classification report which include precision, recall, and F-score for each classification categories.
 
-#### Flask Web App
+### Flask Web App
 The front-end user interface to classify messages 
 
-#### Run the app:
+### Run the app:
 From the app directory run: 
 ```
 python run.py
