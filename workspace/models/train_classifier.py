@@ -72,7 +72,7 @@ def build_model():
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
-        ('clf', MultiOutputClassifier(RandomForestClassifier(n_estimators=50)))
+        ('clf', MultiOutputClassifier(RandomForestClassifier(n_estimators=100)))
     ])
     return pipeline
 
