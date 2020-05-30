@@ -40,7 +40,9 @@ This will also output the model classification report which include precision, r
 The app directory contains the front-end user interface to display graph and to allow user to input message and get categories that the message belongs to
 
 ### Run the app:
-From the app directory run: 
+First run train_classifier to build the model then start the Flask run app
 ```
+cd workspace/model
+python train_classifier.py ../data/DisasterResponse.db classifier.pkl
 python run.py
 ```
