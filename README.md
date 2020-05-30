@@ -2,6 +2,10 @@
 
 #### A machine learning pipeline to classify messages to be sent to appropriate disaster relief agency
 
+The application home page gives an overview of training dataset, including the distributions of message categories, as well as the distribution of message genres
+
+To get the message categories, enter the message in the input field and click "Classify Message" button, the result will show as highlighted in the result list.
+
 ### Prerequisites
 
 - Python
@@ -33,7 +37,7 @@ python train_classifier.py ../data/DisasterResponse.db classifier.pkl
 This will also output the model classification report which include precision, recall, and F-score for each classification categories.
 
 ### Flask Web App
-The front-end user interface to classify messages 
+The app directory contains the front-end user interface to display graph and to allow user to input message and get categories that the message belongs to
 
 ### Run the app:
 From the app directory run: 

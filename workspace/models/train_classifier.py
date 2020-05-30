@@ -15,7 +15,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import classification_report
 
 nltk.download(['punkt', 'wordnet'])
@@ -65,7 +65,7 @@ def tokenize(text):
 
 def build_model():
     """Build a model pipeline
-    
+
     Returns:
         Pipeline: Model pipeline with the best parameters from cross validation grid search
     """
@@ -74,7 +74,14 @@ def build_model():
         ('tfidf', TfidfTransformer()),
         ('clf', MultiOutputClassifier(RandomForestClassifier(n_estimators=100)))
     ])
-    return pipeline
+
+    parameters = {
+        'vect__max_features': (None, 5000),
+        'clf__estimator__n_estimators': [10, 50],
+        # 'clf__estimator__min_samples_split': [2, 4]
+    }
+
+    return GridSearchCV(pipeline, param_grid=parameters, cv=2, n_jobs=-1, verbose=3)
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
